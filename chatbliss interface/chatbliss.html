@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let's meet</title>
+
+    <!-- Add Font Awesome library link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: blue;
+            background: url('view2.jpg') center/cover no-repeat;
+            background-size: 1500px 1275px; /* or contain, depending on your preference */
+            overflow: hidden;
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        body.dark-mode {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            margin-right: auto;
+        }
+
+        nav {
+            padding: 10px;
+            background-color: rgba(51, 51, 51, 0.7);
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            background-color: #4f8ed1;
+            border-radius: 100px;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+
+        #search-box {
+            position: relative;
+        }
+
+        #search-bar {
+            padding: 5px;
+            border: none;
+            border-radius: 100px;
+            padding-right: 30px; /* Make room for the search icon */
+        }
+
+        #search-icon {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+
+        .content {
+            flex-grow: 1;
+            padding: 0;
+            margin: 0px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: flex-end;
+        }
+
+        .content-row {
+            flex-basis: calc(30% - 20px);
+            padding: 20px;
+            margin: 5px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 50px;
+            color: #17314f;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            background-size: cover;  /* Ensure the background image covers the entire box */
+            background-position: center;  /* Center the background image */
+        }
+
+        .content-row:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            background-color: #4f8ed1; /* Change the background color on hover */
+            transition: background-color 0.3s; /* Add a smooth transition effect */
+            cursor: pointer;
+        }
+
+        .education {
+            background-image: url("education1.jpg");
+            color: blue;
+            text-align: left;
+        }
+
+        .sports {
+            background-image: url("sport2.jpg");
+        }
+
+        .gaming {
+            background-image: url("game3.WEBP");
+            color: blue;
+        }
+
+        .movie {
+            background-image: url("cinema2.jpg");
+            color: blue;
+        }
+
+        .entertainment {
+            background-image: url("entertain1.jpg");
+            color: blue;
+        }
+
+        .travel {
+            background-image: url("anit.jpg");
+            color: blue;
+        }
+
+        .footer {
+            background-color: rgba(51, 51, 51, 0.7);
+            padding: 0px;
+            text-align: left;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            color: white; /* Change text color to white */
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            padding: 5px;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        .footer a:hover {
+            background-color: #4f8ed1;
+            border-radius: 100px;
+        }
+
+        #dark-mode-toggle {
+            background-color: #4f8ed1;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin-right: auto;
+        }
+
+        #dark-mode-toggle:hover {
+            background-color: #356ca0;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div>
+            <a href="#home">Home</a>
+            <a href="#discover">Discover</a>
+            <a href="#create">Create</a>
+            <a href="#"><i class="fa fa-envelope"> message</i></a>
+        </div>
+        <div class="search-container">
+            <div id="search-box">
+                <form action="#!">
+                    <input type="text" placeholder="Search.." name="search" id="search-bar">
+                    <button type="submit" id="search-icon"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="content">
+        <a href="#Education" class="content-row education">Education</a>
+        <a href="#Sports" class="content-row sports">Sports</a>
+        <a href="#Gaming" class="content-row gaming">Gaming</a>
+        <a href="#Movies" class="content-row movie">Movies</a>
+        <a href="#Entertainment" class="content-row entertainment">Entertainment</a>
+        <a href="#Travel" class="content-row travel">Travel</a>
+    </div>
+
+    <footer class="footer">
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact Us</a>
+        <a href="#FAQ">FAQ</a>
+        <a href="#help">Help</a>
+        <button id="dark-mode-toggle">Dark Mode</button>
+    </footer>
+
+    <script>
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const body = document.body;
+
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+        });
+    </script>
+</body>
+</html>
